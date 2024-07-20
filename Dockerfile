@@ -10,7 +10,7 @@ COPY go.mod go.sum ./
 
 RUN go mod download
 
-# COPY .env ./
+COPY .env ./
 
 COPY . .
 
