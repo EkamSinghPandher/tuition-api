@@ -1,0 +1,15 @@
+services:
+  app:
+    container_name: tuition-api
+    build:
+      context: . 
+    restart: unless-stopped
+    command: sh -c "./wait && ./bin/app"
+    ports:
+      - 8080:8080
+    environment:
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=10
+      - WAIT_HOST_CONNECT_TIMEOUT=10
+
+    
